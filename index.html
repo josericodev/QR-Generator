@@ -2,45 +2,70 @@
 <html>
 <head>
     <title>Generador QR</title>
+    <meta name="keywords" content="jose rico, jose antonio rico, QR, QR Generador, Generador de QR, QR Generate" />
+    <meta name="description" content="Welcome to my QR Generator. Generate a QR by text or URL" />
+    <meta name="author" content="Jose Antonio Rico" />
+    <link id='favicon' rel="shortcut icon" href="https://img.icons8.com/color/48/qr-code--v1.png" type="image/x-png">
+
+    <!-- Estilos generales -->
     <link rel="stylesheet" href="assets/styles.css">
+
+    <!-- Estilos Bootstrap -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
 
-    <main>
-        <!-- Comienzo de la sección del formulario -->
-        <section class="section" id="section-form">
-            <form>
-                <div class="form-group">
-                    <label>Color del QR</label> <input type="text" id="text-input" placeholder="Texto o URL">
-                 </div>
-                <div class="form-group">
-                   <label>Color del QR</label> <input type="color"> <span></span>
-                </div>
-                <div class="form-group">
-                    <label>Color del fondo</label> <input type="color"> <span></span>
-                </div>
-                <div class="form-group">
-                    <button type="button" onclick="generateQRCode()">Generar Código QR</button>
-                    <button type="button" onclick="generateQRCode()">Generar Código QR</button>
-                </div>
-            </form>
-        </section>
-        <!-- Final de la sección del formulario -->
-
-        <!-- Comienzo de la sección del QR -->
-        <section class="section" id="section-QR">
-            <div id="qrcode"></div>
-        </section>
-        <!-- Final de la sección del QR -->
-
+    <main class="container mt-5 border shadow p-4 rounded">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <h2 class="text-center"><i class="fas fa-solid fa-qrcode"></i> QR <span>GENERATOR</span></h2>
+                <form>
+                    <div class="form-group">
+                        <label for="campo1">Texto o URL:</label>
+                        <input id="text-input" class="form-control" type="text">
+                    </div>
+                    <div class="form-group">
+                        <label for="campo2">Color QR:</label>
+                        <input id="inputColorQR" type="color" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="campo3">Color de fondo:</label>
+                        <input id="inputColorFondoQR"  class="form-control" type="color">
+                    </div>
+                    <button id="btnGenerarQR" class="btn btn-primary btn-block mb-3" type="button" disabled>Generar</button>
+                    
+                </form>
+            </div>
+            <section class="col-md-6">
+                <h2 class="text-center">QR</h2>
+                <section class="row justify-content-center p-4 rounded">
+                    <article class="section" id="section-QR">
+                        <div id="qrcode"><span>QR sin generar</span></div>
+                        <button id="btnSaveQR" class="btn btn-success btn-block mt-4 d-none" type="button">Guardar</button>
+                    </article>
+                </section>
+            </section>
+        </div>
     </main>
     
-    
-    
+    <!-- CDN de qrcode.min.js -->
     <script src="assets/qrcodejs/qrcode.min.js"></script>
+
+    <!-- CDN de FileSaver.min.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+
+    <!-- Script principal -->
     <script src="assets/main.js"></script>
-    <script>
-        
-    </script>
+
+    <!-- CDNs Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- CDN Sweetalert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 </html>

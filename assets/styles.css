@@ -1,41 +1,12 @@
-* {
-    margin: 0px;
-    padding: 0px;
-    font-family: Arial, Helvetica, sans-serif;
+#qrcode {
+    width: 254px;
+    height: 254px;
+    border: 2px solid  #1b1b1b;
+    background-color: #ccc;
+    text-align: center;
+    vertical-align: center;
 }
 
-main {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    margin: 3em auto;
-    width: 50%;
-    border: 1px solid #000;
-    box-shadow: 10px 10px 10px #ccc;
-    
-    .section {
-        padding: 1em;
-
-        form {
-            
-            .form-group {
-                margin: 1em;
-                border: 1px solid #000;
-            }
-        }
-        
-    }
-
-    #section-QR {
-    
-        #qrcode {
-            border: 1px solid #000;
-            width: 250px;
-            height: 250px;
-        }
-    }
-  
+h2 span {
+    color: rgba(0, 55, 255, 0.2);
 }
-
-
-
